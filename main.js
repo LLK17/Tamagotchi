@@ -85,6 +85,9 @@ window.onload= function(){
     lift=Number(50);
     console.log(food, water, lift);
     checkHealth();
+    document.getElementById('foodButton').setAttribute("style", "visibility: visible");
+    document.getElementById('waterButton').setAttribute("style", "visibility:visible;");
+    document.getElementById('exerciseButton').setAttribute("style", "visibility:visible;");
   }
 
   function checkHealth(){
@@ -106,6 +109,9 @@ window.onload= function(){
         if(food <= 0 || water <= 0 || lift <= 0){
           console.log('RIP TO THE HOMIE');
           document.getElementById('petDiv').innerHTML=("<img src='images/press-f2.png'>");
+          document.getElementById('foodButton').setAttribute("style", "visibility:hidden;");
+          document.getElementById('waterButton').setAttribute("style", "visibility:hidden;");
+          document.getElementById('exerciseButton').setAttribute("style", "visibility:hidden;");
         }
       }
     }
