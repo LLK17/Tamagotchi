@@ -33,7 +33,6 @@ window.onload= function(){
     else{
       water=localStorage.getItem('waterTrack');
     }
-
   }
   function checkLift(){
     if (lift==undefined)
@@ -95,9 +94,20 @@ window.onload= function(){
     document.getElementById('foodStat').innerHTML=(food);
     document.getElementById('waterStat').innerHTML=(water);
     document.getElementById('liftStat').innerHTML=(lift);
-    if(food <= 0 || water <= 0 || lift <= 0){
-      console.log('RIP TO THE HOMIE');
-      document.getElementById('petDiv').innerHTML=("<img src='images/press-f2.png'>")
+
+    //visual pet status
+    if(food >=50 && water >=50 && lift >=50){
+      document.getElementById('petDiv').innerHTML=("<img src='images/rowleyboi.jpeg'>");
+    }
+    else if(food <=40 || water <=40 || lift <=40){
+      document.getElementById('petDiv').innerHTML=("<img src='images/f-1.png'>");
+      if(food <=20 || water <=20 || lift <=20){
+        document.getElementById('petDiv').innerHTML=("<img src='images/big-f.png'>");
+        if(food <= 0 || water <= 0 || lift <= 0){
+          console.log('RIP TO THE HOMIE');
+          document.getElementById('petDiv').innerHTML=("<img src='images/press-f2.png'>");
+        }
+      }
     }
   }
 

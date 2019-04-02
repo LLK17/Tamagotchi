@@ -12,7 +12,7 @@ html, body{
 body{
   display: grid;
   grid-template-rows: [HUD] 1fr [inputs] 1fr [pet] 1fr [reset] 1fr ;
-  grid-gap: 5vh;
+  grid-row-gap: 50px;
   align-items: center;
 }
 
@@ -79,4 +79,10 @@ cursor: pointer;
 border:0;
 border-radius: 3vh;
 font-family: 'Open Sans' , sans-serif;
+}
+
+#petDiv{
+  display:grid;
+  grid-row: pet;
+  justify-items: center;
 }
