@@ -57,7 +57,7 @@ window.onload= function(){
     checkFood();
       food=Number(food)+15;
       lift=Number(lift)-10;
-    console.log(food , water , lift);
+    (food , water , lift);
     checkHealth();
 
   }
@@ -66,7 +66,7 @@ window.onload= function(){
     checkWater();
     water=Number(water)+15;
     lift=Number(lift)-10;
-    console.log(food, water , lift);
+    (food, water , lift);
     checkHealth();
   }
 
@@ -75,7 +75,7 @@ window.onload= function(){
     lift=Number(lift)+15;
     food=Number(food)-10;
     water=Number(water)-10;
-    console.log(food, water, lift);
+    (food, water, lift);
     checkHealth();
   }
 
@@ -83,7 +83,7 @@ window.onload= function(){
     food=Number(50);
     water=Number(50);
     lift=Number(50);
-    console.log(food, water, lift);
+    (food, water, lift);
     checkHealth();
     document.getElementById('foodButton').setAttribute("style", "visibility: visible");
     document.getElementById('waterButton').setAttribute("style", "visibility:visible;");
@@ -107,7 +107,7 @@ window.onload= function(){
       if(food <=20 || water <=20 || lift <=20){
         document.getElementById('petDiv').innerHTML=("<img src='images/big-f.png'>");
         if(food <= 0 || water <= 0 || lift <= 0){
-          console.log('RIP TO THE HOMIE');
+          ('RIP TO THE HOMIE');
           document.getElementById('petDiv').innerHTML=("<img src='images/press-f2.png'>");
           document.getElementById('foodButton').setAttribute("style", "visibility:hidden;");
           document.getElementById('waterButton').setAttribute("style", "visibility:hidden;");
