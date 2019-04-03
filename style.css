@@ -91,5 +91,6 @@ font-family: 'Open Sans' , sans-serif;
   display:grid;
   grid-row:reset;
   justify-items:center;
-  margin:2vh;
+  margin-top:2vh;
+  margin-left:.75vw;
 }
