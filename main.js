@@ -77,8 +77,8 @@ window.onload= function(){
   function lifting(){
     checkLift();
     lift=Number(lift)+15;
-    food=Number(food)-10;
-    water=Number(water)-10;
+    food=Number(food)-8;
+    water=Number(water)-8;
     (food, water, lift);
     checkHealth();
   }
@@ -106,32 +106,35 @@ window.onload= function(){
     document.getElementById('liftStat').innerHTML=(lift);
 
     //visual pet status
-    if(food >=50 && water >=50 && lift >=50 ){
-      document.getElementById('petDiv').innerHTML=("<img src='images/rowleyboi.jpeg'>");
-      if(food >=65 && water >=65 && lift >=65){
-      document.getElementById('petDiv').innerHTML=("<img src='images/based-1.jpeg'>");
-        if (food >=75 && water >=75 && lift >=75){
-          document.getElementById('petDiv').innerHTML=("<img src='images/based-2.jpeg'>");
-          if (food >=85 && water >=85 && lift >=85){
-            document.getElementById('petDiv').innerHTML=("<img src='images/galaxy.jpeg'>");
-          }
-        }
-      }
+    if (food >=85 && water >=85 && lift >=85){
+      document.getElementById('petDiv').innerHTML=("<img src='images/galaxy.jpeg'>");
     }
-    else if(food <=40 || water <=40 || lift <=40){
+    else if (food >=75 && water >=75 && lift >=75){
+      document.getElementById('petDiv').innerHTML=("<img src='images/based-2.jpeg'>");
+    }
+    else if(food >=65 && water >=65 && lift >=65){
+    document.getElementById('petDiv').innerHTML=("<img src='images/based-1.jpeg'>");
+    }
+    else if(food >=50 && water >=50 && lift >=50 ){
+      document.getElementById('petDiv').innerHTML=("<img src='images/rowleyboi.jpeg'>");
+    }
+
+    else if(food > 30 && water > 30 && lift > 30){
       document.getElementById('petDiv').innerHTML=("<img src='images/f-1.png'>");
-      if(food <=20 || water <=20 || lift <=20){
-        document.getElementById('petDiv').innerHTML=("<img src='images/big-f.png'>");
-        if(food <= 0 || water <= 0 || lift <= 0){
-          document.getElementById('petDiv').innerHTML=("<img src='images/press-f2.png'>");
-          document.getElementById('foodButton').setAttribute("style", "visibility:hidden;");
-          document.getElementById('waterButton').setAttribute("style", "visibility:hidden;");
-          document.getElementById('exerciseButton').setAttribute("style", "visibility:hidden;");
-          document.getElementById('foodStat').setAttribute("style", "visibility:hidden;");
-          document.getElementById('waterStat').setAttribute("style", "visibility:hidden;");
-          document.getElementById('liftStat').setAttribute("style", "visibility:hidden;");
-        }
-      }
+    }
+
+    else if(food > 0 && water > 0 && lift > 0){
+      document.getElementById('petDiv').innerHTML=("<img src='images/big-f.png'>");
+    }
+
+    else{
+      document.getElementById('petDiv').innerHTML=("<img src='images/press-f2.png'>");
+      document.getElementById('foodButton').setAttribute("style", "visibility:hidden;");
+      document.getElementById('waterButton').setAttribute("style", "visibility:hidden;");
+      document.getElementById('exerciseButton').setAttribute("style", "visibility:hidden;");
+      document.getElementById('foodStat').setAttribute("style", "visibility:hidden;");
+      document.getElementById('waterStat').setAttribute("style", "visibility:hidden;");
+      document.getElementById('liftStat').setAttribute("style", "visibility:hidden;");
     }
   }
 
