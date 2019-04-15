@@ -5,6 +5,10 @@ window.onload= function(){
   var water=localStorage.getItem('foodTrack');
   var lift=localStorage.getItem('foodTrack');
 
+  var foodTimer=setInterval(foodDecay,11000);
+  var waterTimer=setInterval(waterDecay,10000);
+  var liftTimer=setInterval(liftDecay,17000);
+
   //calls fuctions to check health variables
   checkFood();
   checkWater();
@@ -88,6 +92,9 @@ window.onload= function(){
     document.getElementById('foodButton').setAttribute("style", "visibility: visible");
     document.getElementById('waterButton').setAttribute("style", "visibility:visible;");
     document.getElementById('exerciseButton').setAttribute("style", "visibility:visible;");
+    document.getElementById('foodStat').setAttribute("style", "visibility:visible;");
+    document.getElementById('waterStat').setAttribute("style", "visibility:visible;");
+    document.getElementById('liftStat').setAttribute("style", "visibility:visible;");
   }
 
   function checkHealth(){
@@ -120,9 +127,31 @@ window.onload= function(){
           document.getElementById('foodButton').setAttribute("style", "visibility:hidden;");
           document.getElementById('waterButton').setAttribute("style", "visibility:hidden;");
           document.getElementById('exerciseButton').setAttribute("style", "visibility:hidden;");
+          document.getElementById('foodStat').setAttribute("style", "visibility:hidden;");
+          document.getElementById('waterStat').setAttribute("style", "visibility:hidden;");
+          document.getElementById('liftStat').setAttribute("style", "visibility:hidden;");
         }
       }
     }
   }
+
+//stat droppage over time
+  function foodDecay(){
+    food=Number(food)-3;
+    checkHealth();
+  }
+
+  function waterDecay(){
+    water=Number(water)-3;
+    checkHealth();
+  }
+
+  function liftDecay(){
+    lift=Number(lift)-3;
+    checkHealth();
+  }
+
+
+
 
 }
