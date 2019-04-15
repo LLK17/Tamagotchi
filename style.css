@@ -16,7 +16,7 @@ body{
   align-items: center;
 }
 
-.HUDgrid{
+#HUDgrid{
   display: grid;
   grid-row: HUD;
   grid-template-rows: [title] 1fr [icons] 1fr;
@@ -87,7 +87,7 @@ font-family: 'Open Sans' , sans-serif;
   justify-items: center;
 }
 
-#resetDiv{
+#optionsDiv{
   display:grid;
   grid-row:reset;
   justify-items:center;
