@@ -1,9 +1,9 @@
 window.onload= function(){
 
-  //Pet health variables
+  //Pet health variables and value storage
   var food=localStorage.getItem('foodTrack');
-  var water=localStorage.getItem('foodTrack');
-  var lift=localStorage.getItem('foodTrack');
+  var water=localStorage.getItem('waterTrack');
+  var lift=localStorage.getItem('liftTrack');
 
   var foodTimer=setInterval(foodDecay,11000);
   var waterTimer=setInterval(waterDecay,10000);
