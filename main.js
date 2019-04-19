@@ -118,9 +118,9 @@ window.onload= function(){
         }
       }
     }
-    else if(food < 40 || water < 40 || lift < 40){
+    else if(food <= 40 || water <= 40 || lift <= 40){
       document.getElementById('petDiv').innerHTML=("<img src='images/f-1.png'>");
-      if(food < 20 || water < 20 || lift < 20){
+      if(food <= 20 || water <= 20 || lift <= 20){
         document.getElementById('petDiv').innerHTML=("<img src='images/big-f.png'>");
         if(food <=0 || water <=0 || lift <=0){
           console.log('f');
