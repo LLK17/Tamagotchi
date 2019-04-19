@@ -6,7 +6,7 @@ window.onload= function(){
   var lift=localStorage.getItem('liftTrack');
 
   var foodTimer=setInterval(foodDecay,11000);
-  var waterTimer=setInterval(waterDecay,10000);
+  var waterTimer=setInterval(waterDecay,9000);
   var liftTimer=setInterval(liftDecay,17000);
 
   //calls fuctions to check health variables
@@ -70,7 +70,7 @@ window.onload= function(){
     checkWater();
     water=Number(water)+15;
     lift=Number(lift)-10;
-    (food, water , lift);
+    //(food, water , lift);
     checkHealth();
   }
 
@@ -79,7 +79,7 @@ window.onload= function(){
     lift=Number(lift)+15;
     food=Number(food)-8;
     water=Number(water)-8;
-    (food, water, lift);
+    //(food, water, lift);
     checkHealth();
   }
 
@@ -87,7 +87,7 @@ window.onload= function(){
     food=Number(50);
     water=Number(50);
     lift=Number(50);
-    (food, water, lift);
+    //(food, water, lift);
     checkHealth();
     document.getElementById('foodButton').setAttribute("style", "visibility: visible");
     document.getElementById('waterButton').setAttribute("style", "visibility:visible;");
@@ -106,35 +106,33 @@ window.onload= function(){
     document.getElementById('liftStat').innerHTML=(lift);
 
     //visual pet status
-    if (food >=85 && water >=85 && lift >=85){
-      document.getElementById('petDiv').innerHTML=("<img src='images/galaxy.jpeg'>");
-    }
-    else if (food >=75 && water >=75 && lift >=75){
-      document.getElementById('petDiv').innerHTML=("<img src='images/based-2.jpeg'>");
-    }
-    else if(food >=65 && water >=65 && lift >=65){
-    document.getElementById('petDiv').innerHTML=("<img src='images/based-1.jpeg'>");
-    }
-    else if(food >=50 && water >=50 && lift >=50 ){
+    if(food >=50 && water >=50 && lift >=50 ){
       document.getElementById('petDiv').innerHTML=("<img src='images/rowleyboi.jpeg'>");
+      if(food >=65 && water >=65 && lift >=65){
+      document.getElementById('petDiv').innerHTML=("<img src='images/based-1.jpeg'>");
+        if (food >=75 && water >=75 && lift >=75){
+          document.getElementById('petDiv').innerHTML=("<img src='images/based-2.jpeg'>");
+          if (food >=85 && water >=85 && lift >=85){
+            document.getElementById('petDiv').innerHTML=("<img src='images/galaxy.jpeg'>");
+          }
+        }
+      }
     }
-
-    else if(food > 30 && water > 30 && lift > 30){
+    else if(food < 40 || water < 40 || lift < 40){
       document.getElementById('petDiv').innerHTML=("<img src='images/f-1.png'>");
-    }
-
-    else if(food > 0 && water > 0 && lift > 0){
-      document.getElementById('petDiv').innerHTML=("<img src='images/big-f.png'>");
-    }
-
-    else{
-      document.getElementById('petDiv').innerHTML=("<img src='images/press-f2.png'>");
-      document.getElementById('foodButton').setAttribute("style", "visibility:hidden;");
-      document.getElementById('waterButton').setAttribute("style", "visibility:hidden;");
-      document.getElementById('exerciseButton').setAttribute("style", "visibility:hidden;");
-      document.getElementById('foodStat').setAttribute("style", "visibility:hidden;");
-      document.getElementById('waterStat').setAttribute("style", "visibility:hidden;");
-      document.getElementById('liftStat').setAttribute("style", "visibility:hidden;");
+      if(food < 20 || water < 20 || lift < 20){
+        document.getElementById('petDiv').innerHTML=("<img src='images/big-f.png'>");
+        if(food <=0 || water <=0 || lift <=0){
+          console.log('f');
+          document.getElementById('petDiv').innerHTML=("<img src='images/press-f2.png'>");
+          document.getElementById('foodButton').setAttribute("style", "visibility:hidden;");
+          document.getElementById('waterButton').setAttribute("style", "visibility:hidden;");
+          document.getElementById('exerciseButton').setAttribute("style", "visibility:hidden;");
+          document.getElementById('foodStat').setAttribute("style", "visibility:hidden;");
+          document.getElementById('waterStat').setAttribute("style", "visibility:hidden;");
+          document.getElementById('liftStat').setAttribute("style", "visibility:hidden;");
+        }
+      }
     }
   }
 
